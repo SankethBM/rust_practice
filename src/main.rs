@@ -6,6 +6,9 @@ use std::io;
 fn main() {
     sum();
 
+    let reval = ret_val();
+    println!("return value is {}", reval);
+
     loop {
         println!("Guess the no : ");
 
@@ -33,4 +36,8 @@ fn sum() {
     let b = 4;
     let c = a + b;
     println!("{}+{}={}", a, b, c)
+}
+
+fn ret_val() -> i32 {
+    5
 }
