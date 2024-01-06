@@ -4,6 +4,47 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
+    println!(r#"       welcome to...      "#);
+    println!(r#"                 _        "#);
+    println!(r#"  _ __ _   _ ___| |_      "#);
+    println!(r#" | '__| | | / __| __|     "#);
+    println!(r#" | |  | |_| \__ \ |_      "#);
+    println!(r#" |_|   \__,_|___/\__|     "#);
+    println!();
+
+    let s = String::from("hello");
+    takes_ownership(s);
+    // println!("{}", s);
+
+    let x = 5;
+    makes_copy(x);
+    println!("{}", x);
+
+    fn takes_ownership(some_str: String) {
+        println!("{}", some_str);
+    }
+
+    fn makes_copy(some_int: i32) {
+        println!("{}", some_int);
+    }
+
+    let s1 = g_o();
+    println!("{}", s1);
+
+    fn g_o() -> String {
+        let s_s = String::from("hellooo");
+        s_s
+    }
+
+    let x = 5;
+    let y = x;
+    println!("{} {}", x, y);
+
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
+
+    println!("{}", s2);
+
     sum();
 
     let reval = ret_val();
