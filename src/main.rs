@@ -12,55 +12,74 @@ fn main() {
     println!(r#" |_|   \__,_|___/\__|     "#);
     println!();
 
-    let s = String::from("hello");
-    takes_ownership(s);
+    // let s = String::from("hello");
+    // takes_ownership(s);
     // println!("{}", s);
 
-    let x = 5;
-    makes_copy(x);
-    println!("{}", x);
+    // let x = 5;
+    // makes_copy(x);
+    // println!("{}", x);
 
-    fn takes_ownership(some_str: String) {
-        println!("{}", some_str);
-    }
+    // fn takes_ownership(some_str: String) {
+    //     println!("{}", some_str);
+    // }
 
-    fn makes_copy(some_int: i32) {
-        println!("{}", some_int);
-    }
+    // fn makes_copy(some_int: i32) {
+    //     println!("{}", some_int);
+    // }
 
-    let s1 = g_o();
-    println!("{}", s1);
+    // let s1 = g_o();
+    // println!("{}", s1);
 
-    let s2 = String::from("hi");
-    println!("{} s2", s2);
-    let s3 = tagb(s2);
-    println!("{} s3", s3);
+    // let s2 = String::from("hi");
+    // println!("{} s2", s2);
+    // let s3 = tagb(s2);
+    // println!("{} s3", s3);
 
-    fn g_o() -> String {
-        let s_s = String::from("hellooo");
-        s_s
-    }
+    // fn g_o() -> String {
+    //     let s_s = String::from("hellooo");
+    //     s_s
+    // }
 
-    fn tagb(a_str: String) -> String {
-        a_str
-    }
+    // fn tagb(a_str: String) -> String {
+    //     a_str
+    // }
 
-    let x = 5;
-    let y = x;
-    println!("{} {}", x, y);
+    // let x = 5;
+    // let y = x;
+    // println!("{} {}", x, y);
 
-    let s11 = String::from("hellooow");
+    // let s11 = String::from("hellooow");
+
     // let s2 = s11.clone();
     // println!("{}", s2);
 
-    let l = cal_len(&s11);
-    println!("length of {} is {}", s11, l);
+    // let l = cal_len(&s11);
+    // println!("length of {} is {}", s11, l);
 
-    fn cal_len(s: &String) -> usize {
-        // let l = s.len();
-        // l
-        s.len()
-    }
+    // let mut s12 = String::from("hello");
+    // change_str(&mut s12);
+    // println!("{}", s12);
+
+    // fn cal_len(s: &String) -> usize {
+    // let l = s.len();
+    // l
+    // s.len()
+    // }
+
+    // fn change_str(s: &mut String) {
+    //     s.push_str(" world")
+    // }
+
+    let mut a1 = String::from("Hii");
+
+    let r1 = &a1;
+    let r2 = &a1;
+
+    println!("{} r1 {} r2", r1, r2); //here the scope of immutable variable a1 will end
+
+    let r3 = &mut a1; //we can make access to a mutable variable outside its scope , and mut variable can only accessed once , and also 1 is immut and other is mut is not accessible
+    println!("{}", r3);
 
     // sum();
 
