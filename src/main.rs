@@ -4,13 +4,87 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    println!(r#"       welcome to...      "#);
-    println!(r#"                 _        "#);
-    println!(r#"  _ __ _   _ ___| |_      "#);
-    println!(r#" | '__| | | / __| __|     "#);
-    println!(r#" | |  | |_| \__ \ |_      "#);
-    println!(r#" |_|   \__,_|___/\__|     "#);
+    println!(r#"         welcome to...        "#);
+    println!(r#"                     _        "#);
+    println!(r#"      _ __ _   _ ___| |_      "#);
+    println!(r#"     | '__| | | / __| __|     "#);
+    println!(r#"     | |  | |_| \__ \ |_      "#);
+    println!(r#"     |_|   \__,_|___/\__|     "#);
     println!();
+
+    let mut s = String::from("hello world");
+
+    let s2 = "hello world";
+
+    let word = f_w(&s2);
+    println!("{}", word);
+
+    fn f_w(s: &str) -> &str {
+        let bytes = s.as_bytes();
+
+        for (i, &item) in bytes.iter().enumerate() {
+            if item == b' ' {
+                return &s[0..i];
+            }
+        }
+
+        &s[..]
+    }
+
+    // No test changes needed!
+    // #[cfg(test)]
+    // mod tests {
+    //     use super::*;
+
+    //     pub fn foo_if_fizz(fizzish: &str) -> &str {
+    //         if fizzish == "fizz" {
+    //             "foo"
+    //         } else {
+    //             "one"
+    //         }
+    //     }
+
+    //     #[test]
+    //     fn foo_for_fizz() {
+    //         assert_eq!(foo_if_fizz("fizz"), "foo")
+    //     }
+
+    //     #[test]
+    //     fn bar_for_fuzz() {
+    //         assert_eq!(foo_if_fizz("fuzz"), "bar")
+    //     }
+
+    //     #[test]
+    //     fn default_to_baz() {
+    //         assert_eq!(foo_if_fizz("literally anything"), "baz")
+    //     }
+    // }
+
+    // let c = bigger(5, 4);
+    // println!("bigger no is {}", bigger(6, 4));
+
+    // pub fn bigger(a: i32, b: i32) -> i32 {
+    //     if a > b {
+    //         a
+    //     } else {
+    //         b
+    //     }
+    // }
+
+    // let original_price = 50;
+    // println!("Your sale price is {}", sale_price(original_price));
+
+    // fn sale_price(price: i32) -> i32 {
+    //     if is_even(price) {
+    //         price - 10
+    //     } else {
+    //         price - 3
+    //     }
+    // }
+
+    // fn is_even(num: i32) -> bool {
+    //     num % 2 == 0
+    // }
 
     // let s = String::from("hello");
     // takes_ownership(s);
@@ -71,15 +145,15 @@ fn main() {
     //     s.push_str(" world")
     // }
 
-    let mut a1 = String::from("Hii");
+    // let mut a1 = String::from("Hii");
 
-    let r1 = &a1;
-    let r2 = &a1;
+    // let r1 = &a1;
+    // let r2 = &a1;
 
-    println!("{} r1 {} r2", r1, r2); //here the scope of immutable variable a1 will end
+    // println!("{} r1 {} r2", r1, r2); //here the scope of immutable variable a1 will end
 
-    let r3 = &mut a1; //we can make access to a mutable variable outside its scope , and mut variable can only accessed once , and also 1 is immut and other is mut is not accessible
-    println!("{}", r3);
+    // let r3 = &mut a1; //we can make access to a mutable variable outside its scope , and mut variable can only accessed once , and also 1 is immut and other is mut is not accessible
+    // println!("{}", r3);
 
     // sum();
 
