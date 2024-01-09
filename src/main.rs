@@ -12,24 +12,28 @@ fn main() {
     println!(r#"     |_|   \__,_|___/\__|     "#);
     println!();
 
-    let mut s = String::from("hello world");
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[0..3];
+    println!("{:?}", slice);
 
-    let s2 = "hello world";
+    // let mut s = String::from("hello world");
 
-    let word = f_w(&s2);
-    println!("{}", word);
+    // let s2 = "hello world";
 
-    fn f_w(s: &str) -> &str {
-        let bytes = s.as_bytes();
+    // let word = f_w(&s2);
+    // println!("{}", word);
 
-        for (i, &item) in bytes.iter().enumerate() {
-            if item == b' ' {
-                return &s[0..i];
-            }
-        }
+    // fn f_w(s: &str) -> &str {
+    //     let bytes = s.as_bytes();
 
-        &s[..]
-    }
+    //     for (i, &item) in bytes.iter().enumerate() {
+    //         if item == b' ' {
+    //             return &s[0..i];
+    //         }
+    //     }
+
+    //     &s[..]
+    // }
 
     // No test changes needed!
     // #[cfg(test)]
