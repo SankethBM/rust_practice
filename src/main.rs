@@ -13,6 +13,11 @@ fn main() {
     println!(r#"     |_|   \__,_|___/\__|     "#);
     println!();
 
+    // let numbers = (1, 2, 3);
+    // let second = numbers.1;
+
+    // assert_eq!(2, second, "This is not the 2nd number in the tuple!")
+
     // let cat = ("Furry McFurson", 3.5);
     // let (name, age) = cat;
 
