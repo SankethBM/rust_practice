@@ -12,9 +12,18 @@ fn main() {
     println!(r#"     |_|   \__,_|___/\__|     "#);
     println!();
 
-    let a = [1, 2, 3, 4, 5];
-    let slice = &a[0..3];
-    println!("{:?}", slice);
+    // let a = [1; 10];
+
+    // if a.len() >= 100 {
+    //     println!("Wow, that's a big array!");
+    // } else {
+    //     println!("Meh, I eat arrays like that for breakfast.");
+    //     panic!("Array not big enough, more elements needed")
+    // }
+
+    // let a = [1, 2, 3, 4, 5];
+    // let slice = &a[0..3];
+    // println!("{:?}", slice);
 
     // let mut s = String::from("hello world");
 
