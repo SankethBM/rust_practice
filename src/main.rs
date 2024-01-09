@@ -1,4 +1,5 @@
 use colored::Colorize;
+use core::num;
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
@@ -11,6 +12,11 @@ fn main() {
     println!(r#"     | |  | |_| \__ \ |_      "#);
     println!(r#"     |_|   \__,_|___/\__|     "#);
     println!();
+
+    // let cat = ("Furry McFurson", 3.5);
+    // let (name, age) = cat;
+
+    // println!("{} is {} years old.", name, age);
 
     // slice_out_of_array();
 
