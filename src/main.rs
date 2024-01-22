@@ -5,13 +5,19 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    println!(r#"         welcome to...        "#);
-    println!(r#"                     _        "#);
-    println!(r#"      _ __ _   _ ___| |_      "#);
-    println!(r#"     | '__| | | / __| __|     "#);
-    println!(r#"     | |  | |_| \__ \ |_      "#);
-    println!(r#"     |_|   \__,_|___/\__|     "#);
-    println!();
+    struct User {
+        username: String,
+        email: String,
+        sign_in_count: u64,
+        active: bool,
+    }
+
+    let user1 = User {
+        username: String::from("Sanketh"),
+        email: String::from("sankethbm@gmail.com"),
+        sign_in_count: 1,
+        active: true,
+    };
 
     // let numbers = (1, 2, 3);
     // let second = numbers.1;
