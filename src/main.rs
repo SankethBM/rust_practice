@@ -4,20 +4,67 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 
-fn main() {
-    struct User {
-        username: String,
-        email: String,
-        sign_in_count: u64,
-        active: bool,
-    }
+#[derive(Debug)]
+struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
 
-    let user1 = User {
+fn b_user(email: String, username: String) -> User {
+    User {
+        email,
+        username,
+        sign_in_count: 1,
+        active: true,
+    }
+}
+
+fn main() {
+    let mut user1 = User {
         username: String::from("Sanketh"),
         email: String::from("sankethbm@gmail.com"),
         sign_in_count: 1,
         active: true,
     };
+
+    let name = user1.username;
+    user1.username = String::from("Sanketh B M");
+
+    println!("{:#?}", user1);
+
+    let user2 = b_user(String::from("karthik@gmail.com"), String::from("karthik"));
+    println!("{:#?}", user2);
+
+    let user3 = User {
+        email: String::from("value@example.com"),
+        username: String::from("value"),
+        ..user2
+    };
+    println!("{:#?}", user3);
+
+    let user4 = User { ..user1 };
+    println!("{:#?}", user4);
+
+    let user5 = User {
+        email: user3.email,
+        username: user2.username,
+        ..user3
+    };
+    println!("{:#?}", user5);
+
+    #[derive(Debug)]
+    struct Color(i32, i32, i32); //<----------------Tuple Structs------------------>
+    #[derive(Debug)]
+    struct Point(i32, i32, i32);
+
+    let b = Color(0, 0, 0);
+    let a = Point(1, 2, 3);
+
+    println!("{:#?} {:#?}", a, b);
+
+    // <-------------------------------------------------------------------  //structs  -------------------------------------------------------------------->
 
     // let numbers = (1, 2, 3);
     // let second = numbers.1;
