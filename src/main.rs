@@ -62,7 +62,57 @@ fn main() {
     let b = Color(0, 0, 0);
     let a = Point(1, 2, 3);
 
-    println!("{:#?} {:#?}", a, b);
+    println!("{:#?} {:#?}", a, b); //<----------------//Tuple Structs------------------>
+
+    //finding area of rectangle  using tuple struct
+    //  1   //
+    let w = 30;
+    let h = 50;
+
+    println!("Area of rectangle is {}", area(w, h));
+
+    fn area(w: u32, h: u32) -> u32 {
+        w * h
+    }
+
+    //  2   //
+    let rect: (u32, u32) = (25, 30);
+
+    println!("Area of Rect is {}", area1(rect));
+
+    fn area1(dimentions: (u32, u32)) -> u32 {
+        dimentions.0 * dimentions.1
+    }
+
+    //  3   //
+    #[derive(Debug)]
+    struct Rectangle {
+        width: u32,
+        height: u32,
+    }
+
+    let rect1 = Rectangle {
+        width: 4,
+        height: 9,
+    };
+    println!("Rectangle Area : {}", area2(&rect1));
+
+    fn area2(rec: &Rectangle) -> u32 {
+        rec.width * rec.height
+    }
+
+    //  4 using methods //
+    impl Rectangle {
+        fn are(&self) -> u32 {
+            self.width * self.height
+        }
+    }
+    let re = Rectangle {
+        width: 30,
+        height: 30,
+    };
+
+    println!("{:#?}", re.are())
 
     // <-------------------------------------------------------------------  //structs  -------------------------------------------------------------------->
 
