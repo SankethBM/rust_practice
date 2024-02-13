@@ -106,13 +106,29 @@ fn main() {
         fn are(&self) -> u32 {
             self.width * self.height
         }
+
+        fn can_hold(&self, other: &Rectangle) -> bool {
+            self.width > other.width && self.height > other.height
+        }
     }
     let re = Rectangle {
         width: 30,
         height: 30,
     };
 
-    println!("{:#?}", re.are())
+    println!("{:#?}", re.are());
+
+    let r1 = Rectangle {
+        width: 20,
+        height: 20,
+    };
+    let r2 = Rectangle {
+        width: 40,
+        height: 50,
+    };
+
+    println!("{}", r1.can_hold(&r1));
+    println!("{}", r1.can_hold(&r2));
 
     // <-------------------------------------------------------------------  //structs  -------------------------------------------------------------------->
 
